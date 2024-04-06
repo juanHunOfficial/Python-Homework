@@ -9,14 +9,12 @@ def calculate_taxes_by_state(state_requested, starting_salary, net_income, home_
     property_tax_by_state = property_tax_by_state[state_requested - 1]
     state_to_display = state[state_requested - 1]
 
-
+    net_income = net_income - (home_value * property_tax_by_state)
+    print(f"Your net income after your annual property taxes is: ${net_income}")
+    net_income = net_income - (starting_salary * state_income_tax)
     print(f"For the state of {state_to_display} your income after the state income tax is: ${round(net_income, 2)}")
 
-    net_income = net_income - (home_value * property_tax_by_state)
-    print("Note: Sales tax will be changed in future iterations to be more accurate,"
-          "for now it will be calculated and removed from the starting salary.")
-    print(f"Your net income after your annual property taxes is: ${net_income}")
-
+    print(f"Living in this state will cost you: ${(starting_salary - net_income)}")
     return net_income
 
 def calculate_federal_income_tax(starting_salary):
@@ -40,9 +38,11 @@ def calculate_federal_income_tax(starting_salary):
     elif starting_salary >= federal_income_limit[6]:
         salary_index = 6
 
+
     net_income = starting_salary
     net_income = net_income - (starting_salary * federal_income_range[salary_index])
 
+    print(f"Based on your income for married filing jointly, you fall under the {(federal_income_range[salary_index] * 100)}% bracket")
     print(f"Your net income after federal taxes have been removed is: ${net_income}")
 
     return net_income
