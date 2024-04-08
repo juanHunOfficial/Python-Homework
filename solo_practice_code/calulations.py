@@ -1,13 +1,13 @@
 def calculate_taxes_by_state(state_requested, starting_salary, net_income, home_value):
     state = ["Florida", "North Carolina", "Tennessee"]
     property_tax_by_state = [0.008, 0.007, 0.0067]
-    sales_tax_by_state = [0.06,0.0475, 0.07]
     state_income_tax = [0, 0.0475, 0]
 
-    state_income_tax = state_income_tax[state_requested - 1]
-    sales_tax_by_state = sales_tax_by_state[state_requested - 1]
-    property_tax_by_state = property_tax_by_state[state_requested - 1]
-    state_to_display = state[state_requested - 1]
+    state_requested -= 1
+
+    state_income_tax = state_income_tax[state_requested]
+    property_tax_by_state = property_tax_by_state[state_requested]
+    state_to_display = state[state_requested]
 
     net_income = net_income - (home_value * property_tax_by_state)
     print(f"Your net income after your annual property taxes is: ${net_income}")
