@@ -1,13 +1,11 @@
 def calculate_taxes_by_state(state_requested, starting_salary, net_income, home_value):
     state = ["Florida", "North Carolina", "Tennessee"]
     property_tax_by_state = [0.008, 0.007, 0.0067]
-    sales_tax_by_state = [0.06,0.0475, 0.07]
     state_income_tax = [0, 0.0475, 0]
 
-    state_income_tax = state_income_tax[state_requested - 1]
-    sales_tax_by_state = sales_tax_by_state[state_requested - 1]
-    property_tax_by_state = property_tax_by_state[state_requested - 1]
-    state_to_display = state[state_requested - 1]
+    state_income_tax = state_income_tax[state_requested]
+    property_tax_by_state = property_tax_by_state[state_requested]
+    state_to_display = state[state_requested]
 
     net_income = net_income - (home_value * property_tax_by_state)
     print(f"Your net income after your annual property taxes is: ${net_income}")
@@ -53,7 +51,6 @@ def display_cost_of_living_stats(state_requested, net_income):
     city_of_state = ["Tampa", "Raleigh", "Nashville"]
     average_col_family_of_4 = [4_759.6, 4_550.5, 4_449.6]#fl(tampa), nc(raleigh), tn(nashville)
     average_col_single = [1_339.5, 1_290.2, 1_234.5]#fl(tampa), nc(raleigh), tn(nashville)
-    state_requested -= 1
 
     print(f"The average cost of living in {city_of_state[state_requested]} is ${average_col_family_of_4[state_requested]} for "
           f"a family of four, and ${average_col_single[state_requested]} for a single person.")
