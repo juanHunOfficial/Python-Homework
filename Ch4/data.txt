@@ -1,0 +1,5 @@
+Hunter          15.50           40
+Soto            15.50           52
+Davis           15.00           20
+Gonzalez        20.04           31
+Chan            17.50           120
