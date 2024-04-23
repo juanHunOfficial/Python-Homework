@@ -1,15 +1,16 @@
-not_sorted_list = [1,12,2,45,6,22,7]
+test_list = [
+    [1, 12, 2, 45, 6, 22, 7],
+    [1, 2, 3, 4, 5, 6, 7],
+    [1, 45, 2, 5],
+    [10, 20, 30, 40, 50]
+]
+def is_sorted(list_to_test):
 
-def is_sorted(not_sorted_list):
-    temp = not_sorted_list[0]
-    sort_results = False
-
-    for ind in range(len(not_sorted_list)):
-        if not_sorted_list[ind] > temp:
-            temp = not_sorted_list
-            sort_results = True
-        elif not_sorted_list[ind] < temp:
+    for index in range(len(list_to_test) - 1):
+        if list_to_test[index] > list_to_test[index + 1]:
             return False
-    return sort_results
+    return True
 
-print(is_sorted(not_sorted_list))
+for test in test_list:
+    print(is_sorted(test))
+
