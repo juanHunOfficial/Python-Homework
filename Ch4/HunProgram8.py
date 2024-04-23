@@ -9,4 +9,3 @@ with open(read_file, "r") as file_r:
 
 
 
-file_r.close()
