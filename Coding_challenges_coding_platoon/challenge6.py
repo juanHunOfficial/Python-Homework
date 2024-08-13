@@ -5,7 +5,7 @@ def MathChallenge(num):
 
     while len(num) >= 2:
         tempFirstNum = num[0]
-        tempSecondNum = num[1]
+        tempSecondNum = num[-1]
 
         num = str(int(tempFirstNum) * int(tempSecondNum))
 
